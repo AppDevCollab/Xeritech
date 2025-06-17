@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -9,12 +10,44 @@ class ValveController extends StatefulWidget {
 }
 
 class _ValveControllerState extends State<ValveController> {
+  final ref = FirebaseDatabase.instance.ref();
+  String soil_moisture = "Loading";
+  String water_level = 'Loading';
   Map<String, List<String>> Languages = {
     "English": ["Valve Controller"],
     "Tamil": ["வால்வ் கட்டுப்பாடு"], // Tamil translation
   };
   // ignore: unused_field
   final _mybox = Hive.box("mybox");
+  @override
+  void initState() {
+    super.initState();
+    _fetchSoilMoisture();
+    _waterlevel();
+  }
+
+  void _fetchSoilMoisture() {
+    ref.child('soil_moisture').onValue.listen((event) {
+      final data = event.snapshot.value;
+      if (data != null) {
+        setState(() {
+          soil_moisture = data.toString(); 
+        });
+      }
+    });
+  }
+
+  void _waterlevel() {
+    ref.child('water_level').onValue.listen((event) {
+      final data = event.snapshot.value;
+      if (data != null) {
+        setState(() {
+          water_level = data.toString();
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -50,6 +83,8 @@ class _ValveControllerState extends State<ValveController> {
                     fontSize: 15,
                   ),
                 ),
+                Text(soil_moisture),
+                Text(water_level),
               ],
             ),
           ),

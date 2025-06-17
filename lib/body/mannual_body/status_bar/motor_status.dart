@@ -25,7 +25,8 @@ class _MotorStatusState extends State<MotorStatus> {
         return Container(
           width: 194,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 1),
+            border: Border.all(color: Colors.white, width: 1),
+            color: Colors.black,
             boxShadow: [
               BoxShadow(
                 offset: Offset(4, 4),
@@ -42,12 +43,12 @@ class _MotorStatusState extends State<MotorStatus> {
               Text(
                 language[currentLanguage]?[0] ?? "default",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
               ),
-              Text("data"),
+              Text("data", style: TextStyle(color: Colors.white)),
             ],
           ),
         );

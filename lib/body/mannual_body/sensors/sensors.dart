@@ -44,7 +44,7 @@ class _SensorsState extends State<Sensors> {
             child: Column(
               children: [
                 Text(
-                  language[currentLanguage]?[0]??'default',
+                  language[currentLanguage]?[0] ?? 'default',
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
