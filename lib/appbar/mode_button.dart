@@ -32,7 +32,7 @@ class _ModeButtonState extends State<ModeButton> {
         width: 200,
         height: 30,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.black,
           boxShadow: [
             BoxShadow(
               color: Colors.black,
