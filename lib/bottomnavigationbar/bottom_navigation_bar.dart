@@ -40,8 +40,10 @@ class _BottomNavigation_BarState extends State<BottomNavigation_Bar> {
             onPressed: null,
             icon: Icon(Icons.security_rounded, color: Colors.black, size: 50),
           ),
+          
         ],
       ),
+      
     );
   }
 }

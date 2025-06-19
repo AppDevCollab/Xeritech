@@ -11,14 +11,14 @@ class ValveStatus extends StatefulWidget {
 class _ValveStatusState extends State<ValveStatus> {
   @override
   Widget build(BuildContext context) {
-    final _mybox = Hive.box("mybox");
+    final mybox = Hive.box("mybox");
 
     Map<String, List<String>> language = {
       'English': ['Valve status', 'Data'],
       'Tamil': ['வால்வு நிலை', 'தரவு'],
     };
     return ValueListenableBuilder(
-      valueListenable: _mybox.listenable(),
+      valueListenable: mybox.listenable(),
       builder: (context, Box box, _) {
         String currentLanguage = box.get('language', defaultValue: 'English');
 

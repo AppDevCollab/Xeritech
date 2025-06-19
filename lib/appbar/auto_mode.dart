@@ -7,7 +7,7 @@ class AutoMode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _mybox = Hive.box("mybox");
+    final mybox = Hive.box("mybox");
 
     Map<String, List<String>> language = {
       'English': ['Auto'],
@@ -15,7 +15,7 @@ class AutoMode extends StatelessWidget {
     };
 
     return ValueListenableBuilder(
-      valueListenable: _mybox.listenable(),
+      valueListenable: mybox.listenable(),
       builder: (context, Box box, _) {
         String currentLanguage = box.get('language', defaultValue: 'English');
 

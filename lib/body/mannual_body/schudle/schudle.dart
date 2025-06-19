@@ -11,14 +11,14 @@ class Schudle extends StatefulWidget {
 class _SchudleState extends State<Schudle> {
   @override
   Widget build(BuildContext context) {
-    final _mybox = Hive.box("mybox");
+    final mybox = Hive.box("mybox");
 
     Map<String, List<String>> language = {
       'English': ['Schudle'],
       'Tamil': ['அட்டவணை'],
     };
     return ValueListenableBuilder(
-      valueListenable: _mybox.listenable(),
+      valueListenable: mybox.listenable(),
       builder: (context, Box box, _) {
         String currentLanguage = box.get('language', defaultValue: 'English');
 

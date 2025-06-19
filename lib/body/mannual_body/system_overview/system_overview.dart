@@ -11,14 +11,14 @@ class SystemOverview extends StatefulWidget {
 class _SystemOverviewState extends State<SystemOverview> {
   @override
   Widget build(BuildContext context) {
-    final _mybox = Hive.box("mybox");
+    final mybox = Hive.box("mybox");
 
     Map<String, List<String>> language = {
       'English': ['System Overview'],
       'Tamil': ['கணினி கண்ணோட்டம்'],
     };
     return ValueListenableBuilder(
-      valueListenable: _mybox.listenable(),
+      valueListenable: mybox.listenable(),
       builder: (context, Box box, _) {
         String currentLanguage = box.get('language', defaultValue: 'English');
 

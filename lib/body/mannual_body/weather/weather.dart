@@ -11,14 +11,14 @@ class Weather extends StatefulWidget {
 class _WeatherState extends State<Weather> {
   @override
   Widget build(BuildContext context) {
-    final _mybox = Hive.box("mybox");
+    final mybox = Hive.box("mybox");
 
     Map<String, List<String>> language = {
       'English': ['Weather'],
       'Tamil': ['வானிலை'],
     };
     return ValueListenableBuilder(
-      valueListenable: _mybox.listenable(),
+      valueListenable: mybox.listenable(),
       builder: (context, Box box, _) {
         String currentLanguage = box.get('language', defaultValue: 'English');
 
