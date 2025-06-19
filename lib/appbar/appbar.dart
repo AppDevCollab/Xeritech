@@ -19,14 +19,17 @@ class _AppbarState extends State<Appbar> {
           // border: Border.all(color: Colors.black, width: 1),
           boxShadow: [
             BoxShadow(
+<<<<<<< HEAD
               color: const Color.fromARGB(255, 19, 17, 17),
-
+=======
+              color: Colors.black,
+>>>>>>> 9f4bfc5f65faf9922cfc035f0837f0319f98fec0
               blurRadius: 10,
               spreadRadius: 2,
               offset: Offset(0, 0),
             ),
           ],
-          color: const Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 0, 0, 0),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
