@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:hive/hive.dart';
+>>>>>>> 9f4bfc5f65faf9922cfc035f0837f0319f98fec0
 import 'package:hive_flutter/hive_flutter.dart';
 
 class AutoMode extends StatelessWidget {
