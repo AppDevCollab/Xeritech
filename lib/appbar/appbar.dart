@@ -19,13 +19,13 @@ class _AppbarState extends State<Appbar> {
           // border: Border.all(color: Colors.black, width: 1),
           boxShadow: [
             BoxShadow(
-              color: const Color.fromARGB(255, 255, 255, 255),
+              color: const Color.fromARGB(255, 0, 0, 0),
               blurRadius: 10,
               spreadRadius: 2,
               offset: Offset(0, 0),
             ),
           ],
-          color: const Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 0, 0, 0),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
